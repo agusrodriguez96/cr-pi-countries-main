@@ -27,16 +27,22 @@ const Paginado = ({ page, setPage, input, setInput, max }) => {
 
     return (
         <div>
-            <div>
+            <div className={style.container}>
                 {input === 1 ?
-                    <span></span> : <button onClick={prevPage} >Back</button>
+                    <span></span> : <button onClick={prevPage} className={style.buttonBack}>«</button>
                 }
-                <input max={max} min='1' name="pag" autoComplete="off" value={input} onChange={(e) => handlePagination(e)} />
-                <button>de {max}</button>
+                <div className={style.div}></div>
+                <div className={style}></div>   
+                <input max={max} min='1' name="pag" autoComplete="off" value={input} onChange={(e) => handlePagination(e)} className={style.input}/>
+                <div className={style.div}></div>
+                <button className={style.buttonMax}>{max}</button>
+                <div className={style.div}></div>
                 {input === max ?
-                    <div></div>
+
+                    <div className={style.div}></div>
                     :
-                    <button  onClick={nextPage} >Next</button>
+                    <button  onClick={nextPage} className={style.buttonNext} >»</button>
+
                 }
             </div>
         </div>

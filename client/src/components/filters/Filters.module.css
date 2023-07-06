@@ -1,0 +1,62 @@
+.alfabeticamente {
+  background-color: rgba(26, 250, 175, 0.267);
+  color: white;
+  border-radius: 10px;
+  width: 150px;
+  height: 25px;
+  border: solid 1px white;
+  margin-left: 320px;
+  margin-top: 10px;
+  outline: none;
+}
+.alfabeticamente:focus {
+    outline:none
+}
+
+.poblacion {
+    background-color: rgba(26, 250, 175, 0.267);
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    border: solid 1px white;
+    margin-left: 30px;
+    outline: none;
+}
+.poblacion:focus {
+    outline:none
+}
+
+.continentes {
+    background-color: rgba(26, 250, 175, 0.267);
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    border: solid 1px white;
+    margin-left: 30px;
+    outline: none;
+}
+.continentes:focus {
+    outline:none
+}
+
+
+.actividad {
+    background-color: rgba(26, 250, 175, 0.267);
+    color: white;
+    border-radius: 10px;
+    width: 150px;
+    height: 25px;
+    border: solid 1px white;
+    margin-left: 30px;
+    outline: none;
+}
+.actividad:focus {
+    outline:none
+}
+
+.options {
+    color: black;
+    background-color: white;
+}

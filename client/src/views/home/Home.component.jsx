@@ -6,7 +6,7 @@ import NavBar from "../../components/NavBar/NavBar.component";
 import Filters from "../../components/filters/Filters.component";
 import Paginado from "../../components/paginado/Paginado.component";
 import { Link } from "react-router-dom";
-
+import style from "./Home.module.css"
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -31,9 +31,9 @@ const Home = () => {
     };
   
     return (
-      <div>
+      <div className={style.overlay}>
+        
         <NavBar />
-        <Link to= "/create">Nueva Actividad</Link>
         <Filters setPage={setPage} setInput={setInput} handleFilter={handleFilter} />
         <Paginado
           page={page}

@@ -2,6 +2,7 @@ import React from "react"
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux";
 import { getAllCountries, getCountryByName } from "../../redux/actions/actions";
+import style from "./Search.module.css"
 
 
 const SearchBar =() => {
@@ -26,16 +27,16 @@ const SearchBar =() => {
      }
     }
     return(
-        <div>
+        <div className={style.container}>
             <form onSubmit={handleOnSubmit}>
-                <input className="inputSearchBar"
-                    placerholder="Search..."
+                <input className={style.inputContainer}
+                    placeholder=" Busca un país..."
                     value={searchCountry}
                     onChange={handleChange}
                 />
-                <div>
-                    <button type="submit">Submit</button>
-                </div>
+                
+                    <button className ={style.button}type="submit">Buscar</button>
+               
            </form>
         </div>
     )

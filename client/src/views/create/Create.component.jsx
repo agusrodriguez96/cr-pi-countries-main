@@ -3,9 +3,10 @@ import { validate } from "./Validation"
 import { Link, useNavigate } from "react-router-dom"
 import { getAllCountries, postActivity } from "../../redux/actions/actions"
 import { useSelector, useDispatch } from "react-redux"
+import style from "./Create.module.css"
+
 
 const Create = () => {
-
   const [form, setForm] = useState({        // estado local
     name: "",
     difficulty: 1,
@@ -70,19 +71,24 @@ const Create = () => {
       season: "",
       countries: [],
     });
-    alert("Actividad");
-    navigate('/home');
+    ;
+    //navigate('/home');
   }
 
 
   return (
-    <div>
-      <Link to="/home">Back Home</Link>
+     <div className={style.overlay}>
+
+      <Link to="/home">
+        <button className={style.buttonVolver}>Volver</button>
+      </Link>
+
+    <div className={style.container}>
       {showErrors && <p>{errors}</p>}
       <form onSubmit={handleSubmit}>
 
-        <div>
-          <label htmlFor="name">Nombre: </label>
+        <div className={style.nombreContainer}>
+          <label htmlFor="name" className={style.textoName}>Nombre: </label>
           <input
             id="name"
             name="name"
@@ -93,20 +99,20 @@ const Create = () => {
 
         </div>
 
-        <div>
-          <label htmlFor="difficulty">Dificultad: </label>
+        <div className={style.dificultad}>
+          <label htmlFor="difficulty"className={style.textoDificultad}>Dificultad: </label>
           <input
             id="difficulty"
             type="text"
             name="difficulty"
-            placeholder="ingrese nivel de dificultad"
+            placeholder="Ingrese nivel de dificultad (1 al 5)"
             value={form.difficulty}
             onChange={handleChange} />
 
         </div>
 
-        <div>
-          <label htmlFor="duration">Duración: </label>
+        <div className={style.duracion}>
+          <label htmlFor="duration" className={style.textoDuracion}>Duración: </label>
           <input
             id="duration"
             name="duration"
@@ -116,45 +122,48 @@ const Create = () => {
 
         </div>
 
-        <div>
-          <label htmlFor="season">Temporada: </label>
+        <div className={style.temporada}>
+          <label htmlFor="season" className={style.textoTemporada}>Temporada: </label>
           <input
             id="season"
             name="season"
             type="text"
-            placerholder="ingrese temporada"
+            placeholder="Ingrese temporada del año"
             value={form.season}
             onChange={handleChange} />
         </div>
 
         <div>
-          <label>Países:</label>
-          <select placeholder="Paises" name="countries" onChange={(event) => handleSelect(event)}>
-            <option>Elegí los paises</option>
+          <label className={style.textoPaises}></label>
+          <select className={style.paises} placeholder="Paises" name="countries" onChange={(event) => handleSelect(event)}>
+            <option className={style.optionsForm}>Elegí los paises</option>
             {paises?.map(element => {
               return (
-                <option value={element.id} key={element.id}>{element.name}</option>
+                <option value={element.id} key={element.id} className={style.optionsForm}>{element.name}</option>
               )
             })}
           </select>
+          <div className={style.contenedorColumnas}>
           {form.countries?.map(country => {
             return (
               <div key={Math.random()}>
-                <div>
-                  <button value={country} type="button" onClick={(e) => handleRemove(e)} >X</button>
+                <div className={style.paisContainer}>
+                  <button value={country} type="button" onClick={(e) => handleRemove(e)}>X</button>
                   <p>{paises.find(activityCountry => activityCountry.id === country).name}</p>
                 </div>
               </div>
             )
           })}
+          </div>
         </div>
 
         <div>
-          <button>Crear</button>
+          <button className={style.buttonCrear}>Crear Actividad</button>
         </div>
 
       </form>
 
+    </div>
     </div>
   )
 }

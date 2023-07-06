@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { filterByContinent, sortByAlphabet, sortByPopulation, filterByActivities } from '../../redux/actions/actions'
-
+import style from "./Filters.module.css"
 
 const Filters = ({ handleFilter }) => {
     const dispatch = useDispatch();
@@ -35,31 +35,31 @@ const Filters = ({ handleFilter }) => {
 
     return(
         <div>
-           <select className="select" onChange={(e) => handleSortByAlphabet(e.target.value)}>
-            <option>Alphabetically</option>
-            <option value="ascendant">Ascendant ↑</option>
-            <option value="descendant">Descendant ↓</option>
+           <select className={style.alfabeticamente} onChange={(e) => handleSortByAlphabet(e.target.value)}>
+            <option className={style.options}>Alfabéticamente</option>
+            <option value="ascendant" className={style.options}>(A - Z ↑)</option>
+            <option value="descendant" className={style.options}>(Z - A ↓)</option>
           </select>
-          <select className="select" onChange={(e) => handleSortByPopulation(e.target.value)}>
-            <option>Population</option>
-            <option value="ascendant">Ascendant ↑</option>
-            <option value="descendant">Descendant ↓</option>
+          <select className={style.poblacion} onChange={(e) => handleSortByPopulation(e.target.value)}>
+            <option className={style.options}>Población</option>
+            <option className={style.options} value="ascendant">Mayor población ↑</option>
+            <option className={style.options} value="descendant">Menor población ↓</option>
       </select>
-          <select className="select" onChange={(e) => handleFilterByContinent(e.target.value)}>
-            <option value="todos">Continents</option>
-            <option value="Africa">Africa</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
-            <option value="Antarctica">Antarctica</option>
-            <option value="North America">North America</option>
-            <option value="South America">South America</option>
+          <select className={style.continentes} onChange={(e) => handleFilterByContinent(e.target.value)}>
+            <option className={style.options} value="todos">Continentes</option>
+            <option className={style.options} value="Africa">Africa</option>
+            <option className={style.options} value="Asia">Asia</option>
+            <option className={style.options} value="Europe">Europe</option>
+            <option className={style.options} value="Oceania">Oceania</option>
+            <option className={style.options} value="Antarctica">Antártida</option>
+            <option className={style.options} value="North America">North America</option>
+            <option className={style.options} value="South America">South America</option>
           </select>
-          <select onChange={(e)=>handleFilterByActivities(e.target.value)}> 
-            <option >Sort By Activity</option>
+          <select onChange={(e)=>handleFilterByActivities(e.target.value)} className={style.actividad}> 
+            <option className={style.options} >Orden por Actividad</option>
             {activitiesSinRepetir?.map(activity => {
             return(
-            <option value={activity} key={Math.random()}>{activity}</option> 
+            <option className={style.options} value={activity} key={Math.random()}>{activity}</option> 
                )
               })
             }

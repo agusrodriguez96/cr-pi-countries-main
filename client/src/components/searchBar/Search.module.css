@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    margin-top: 5px;
+    position: absolute;
+    right: 150px
+
+}
+
+.inputContainer {
+    border-radius: 15px;
+    border:solid rgb(252, 250, 250) 1px;
+    height: 3vh;
+    width: 17vw;
+    background-color: rgba(255, 166, 0, 0);
+    color: rgb(5, 4, 4);
+}
+
+.button {
+    background-color: rgba(0, 0, 0, 0);
+    margin-left: 10px;
+    border-radius: 10px;
+    border: solid white 2px;
+    height: 4vh;
+    width: 6vw;
+    background-color: white;
+    font-family: "Tahoma", sans-serif;
+    
+    color: black;
+    transition: .5s, color .10s;
+    -webkit-transition: .5s, color .10s;
+    -moz-transition: .5s, color .10s;
+
+}
+
+.button:hover{
+    box-shadow: 0 7px 7px 0 #000000d5,0 8px 8px 0 #000000;
+    transform: translate(0px,5px);
+    -webkit-transform: translate(0px,5px);
+   -moz-transform:translate(0px,5px);
+}

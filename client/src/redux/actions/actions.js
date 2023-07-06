@@ -88,10 +88,14 @@ export const filterByActivities = (activity) => {
 export function postActivity(activity) {
     return async (dispatch) => {
         await axios.post("http://localhost:3001/activities", activity).then(result =>{
+            alert("actividad creada")
             return dispatch({
                 type: CREATE_ACTIVITY_FORM,
                 payload: result
-            })
+            }) 
+        }).catch (error => {
+            alert("No se pudo crear la actividad")
+            
         })
     }
 } ; 

@@ -1,15 +1,36 @@
-.navBarContainer {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: aquamarine
+.container{
+  background-color: rgba(26, 250, 175, 0.267);
+  height: 6vh;
+  justify-content: center;
+  display: flex;
+  position: relative;
 }
 
-.imgContainer img {
-    border: solid blue
+
+.container button {
+  float: left;
+  position: absolute;
+
 }
 
-navLinkContainer {
-  border: solid black;
+.buttonCrear {
+  left: 50px;
+  margin-top: 5px;
+  height: 4vh;
+  width: 10vw;
+  border-radius: 15px;
+  border: solid white;
+  font-family: "Tahoma", sans-serif;
+  transition: .5s, color .10s;
+  -webkit-transition: .5s, color .10s;
+  -moz-transition: .5s, color .10s;
+  
 }
+           
+.buttonCrear:hover{
+  box-shadow: 0 7px 7px 0 #000000d5,0 8px 8px 0 #000000;
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  -moz-transform:translate(0px,5px);
+}
+            
